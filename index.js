@@ -19,9 +19,9 @@ const updateRouter = require("./routes/update");
 
 app.use("/api/todos/create", postsRouter);
 app.use("/api/todos/allTodos", getAllRouter);
-app.use("/api/todos/:id/one", oneTodoRouter);
-app.use("/api/todos/:id/delete", deleteRouter);
-app.use("/api/todos/:id/update", updateRouter);
+app.use("/api/todos/one/:id", oneTodoRouter);
+app.use("/api/todos/delete/:id", deleteRouter);
+app.use("/api/todos/update/:id", updateRouter);
 
 app.listen(PORT || null, () => {
   console.log(`serveur lancé sur le port ${PORT}`);
