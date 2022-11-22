@@ -11,17 +11,21 @@ app.connect(pool);
 
 //! ROUTES
 
-const deleteRouter = require("./routes/delete");
-const getAllRouter = require("./routes/get-all");
-const oneTodoRouter = require("./routes/get-one");
-const postsRouter = require("./routes/posts");
-const updateRouter = require("./routes/update");
+// const deleteRouter = require("./routes/delete");
+// const getAllRouter = require("./routes/get-all");
+// const oneTodoRouter = require("./routes/get-one");
+// const postsRouter = require("./routes/posts");
+// const updateRouter = require("./routes/update");
 
-app.use("/api/todos/create", postsRouter);
-app.use("/api/todos/allTodos", getAllRouter);
-app.use("/api/todos/one/:id", oneTodoRouter);
-app.use("/api/todos/delete/:id", deleteRouter);
-app.use("/api/todos/update/:id", updateRouter);
+// app.use("/api/todos/create", postsRouter);
+// app.use("/api/todos/allTodos", getAllRouter);
+// app.use("/api/todos/one/:id", oneTodoRouter);
+// app.use("/api/todos/delete/:id", deleteRouter);
+// app.use("/api/todos/update/:id", updateRouter);
+
+//Adrien
+const todoRouter = require("./routes/todo-router")
+app.use('/api/todos', todoRouter)
 
 app.listen(PORT || null, () => {
   console.log(`serveur lancé sur le port ${PORT}`);

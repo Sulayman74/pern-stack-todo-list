@@ -3,6 +3,9 @@
 const pool = require("../config");
 
 exports.getOneTodo = async (req, res) => {
+  console.log(req.params);
+
+  
   try {
     const { id } = req.params;
     const singleTodo = await pool.query(
